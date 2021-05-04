@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/BossMain.wav-32c0aac097dbb6f2c2bc3c180a9fc3ca.sample"
+
+[deps]
+
+source_file="res://Bonus/WAV/BossMain.wav"
+dest_files=[ "res://.import/BossMain.wav-32c0aac097dbb6f2c2bc3c180a9fc3ca.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

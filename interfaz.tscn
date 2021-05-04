@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://interfaz.gd" type="Script" id=1]
+[ext_resource path="res://Bonus/kenvector_future.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Bonus/CHLORINP.TTF" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=2]
+
+[sub_resource type="DynamicFont" id=3]
+size = 80
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=4]
+
+[sub_resource type="DynamicFont" id=5]
+size = 70
+font_data = ExtResource( 3 )
+
+[node name="interfaz" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -55.6716
+margin_top = -8.47571
+margin_right = 61.3284
+margin_bottom = 145.524
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mensaje" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -414.0
+margin_top = 111.0
+margin_right = 420.0
+margin_bottom = 575.0
+rect_scale = Vector2( 0.988508, 0.79367 )
+theme = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+text = "CHEEMSTONAUTA"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonPlay" type="Button" parent="."]
+anchor_left = 0.851
+anchor_top = 0.801
+anchor_right = 0.851
+anchor_bottom = 0.801
+margin_left = -78.521
+margin_top = -43.5548
+margin_right = 103.479
+margin_bottom = 33.4452
+theme = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "jugar"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MensajeTimer" type="Timer" parent="."]
+wait_time = 3.5
+one_shot = true
+[connection signal="pressed" from="BotonPlay" to="." method="_on_BotonPlay_pressed"]
+[connection signal="timeout" from="MensajeTimer" to="." method="_on_MensajeTimer_timeout"]

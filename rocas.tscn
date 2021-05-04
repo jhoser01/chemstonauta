@@ -1,0 +1,53 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Meteors/CORONAvirus.png" type="Texture" id=1]
+[ext_resource path="res://sprites/murcielago4.png" type="Texture" id=2]
+[ext_resource path="res://sprites/murcielago1.png" type="Texture" id=3]
+[ext_resource path="res://Meteors/CORONAvirus23.png" type="Texture" id=4]
+[ext_resource path="res://rocas.gd" type="Script" id=5]
+[ext_resource path="res://Meteors/CORONAvirus2345.png" type="Texture" id=6]
+[ext_resource path="res://Meteors/CORONAvirus2.png" type="Texture" id=7]
+[ext_resource path="res://sprites/murcielago2.png" type="Texture" id=8]
+[ext_resource path="res://sprites/murcielago3.png" type="Texture" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "corona",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 2 ), ExtResource( 9 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "marron",
+"speed": 10.04
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 48.7697
+
+[node name="rocas" type="RigidBody2D"]
+position = Vector2( 268.098, 164.751 )
+collision_layer = 0
+gravity_scale = 0.0
+script = ExtResource( 5 )
+velocidad_min = 100
+velocidad_max = 200
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 115.283, 129.709 )
+scale = Vector2( 0.466409, 0.202961 )
+frames = SubResource( 1 )
+animation = "marron"
+frame = 5
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 110.322, 136.038 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Visibilidad" type="VisibilityNotifier2D" parent="."]
+[connection signal="screen_exited" from="Visibilidad" to="." method="_on_Visibilidad_screen_exited"]
